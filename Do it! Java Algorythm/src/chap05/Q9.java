@@ -7,7 +7,7 @@ public class Q9 {
 	private static boolean[] flag_a = new boolean[8];
 	private static boolean[] flag_b = new boolean[15];
 	private static boolean[] flag_c = new boolean[15];
-	private static int count = 0;
+	private static int count1 = 0;
 
 	private static void print() {
 		for(int i=0; i<8; i++) {
@@ -30,7 +30,7 @@ public class Q9 {
 				if(i>=7) {
 					print();
 					System.out.println("----------------");
-					count++;
+					count1++;
 				}
 				else {
 					flag_a[j] = flag_b[i+j] = flag_c[i-j+7] = true;
@@ -45,6 +45,8 @@ public class Q9 {
 		Stack<Integer> stkI = new Stack<>();
 		Stack<Integer> stkJ = new Stack<>();
 		
+		int count2 = 0;
+		
 		loop:
 		for(int i=0; i<8; i++) {
 			for(int j=0; j<8; j++) {
@@ -53,7 +55,7 @@ public class Q9 {
 					if(i>=7) {
 						print();
 						System.out.println("----------------");
-						count++;
+						count2++;
 						while(j>=7) {
 							if(stkI.isEmpty()) break loop;
 							i = stkI.pop();
@@ -81,9 +83,12 @@ public class Q9 {
 				}
 			}
 		}
-		System.out.println(count);
+		System.out.println(count2);
 	}
 	public static void main(String[] args) {
+//		set(0);
+//		System.out.println(count1);
+		
 		setX();
 	}
 
